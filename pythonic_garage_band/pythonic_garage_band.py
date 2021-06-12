@@ -2,12 +2,12 @@ from abc import abstractmethod
 
 
 class Band:
-    bands_arr = []
+    instances = []
 
     def __init__(self, name, members):
         self.name = name
         self.members = members
-        self.bands_arr.append(self.members)
+        self.instances.append(self)
 
     def play_solos(self):
 
@@ -15,7 +15,7 @@ class Band:
 
     @classmethod
     def to_list(cls):
-        return cls.bands_arr
+        return cls.instances
 
 
 class Musician:
@@ -66,3 +66,7 @@ class Bassist(Musician):
 
     def play_solo(self):
         return 'bom bom buh bom'
+
+
+# test = Band("ayman", 1)
+# print(test.to_list())
